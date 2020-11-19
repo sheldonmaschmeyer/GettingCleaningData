@@ -19,3 +19,12 @@ if(!file.exists("./.data")) {
   unzip(zipfile = "dataset.zip")
   file.rename("UCI HAR Dataset", ".data") #don't like files/dir with spaces. Hidden dir in gitignore 
 }
+
+#Good hygiene is important
+cleanup <- function() {
+  cleanupData
+  cleanupZip
+}
+cleanupData <- function() unlink(".data", recursive = TRUE)
+
+cleanupZip <- function() unlink("dataset.zip")
