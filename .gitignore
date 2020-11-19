@@ -1,5 +1,6 @@
 # Data Source used for project
 .data
+dataset.zip
 
 # History files
 .Rhistory
