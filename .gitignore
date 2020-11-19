@@ -1,3 +1,6 @@
+# Data Source used for project
+.data
+
 # History files
 .Rhistory
 .Rapp.history
