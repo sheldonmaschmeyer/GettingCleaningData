@@ -1,2 +1,2 @@
-# GettingCleaningData
-Coursera Getting and Cleaning Data Project
+# Coursera Getting and Cleaning Data Project
+Student: Sheldon Maschmeyer
