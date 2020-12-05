@@ -60,6 +60,10 @@ print("40%")
 xMergedData <- rbind (xTest, xTrain)
 yMergedData <- rbind (yTest, yTrain)
 sMergedData <- rbind (sTest, sTrain)
+
+#Mem cleanup, not necessary in this program but, good practice when stuff loaded into memory is 
+#large and, no-longer needed
+rm(list = c('xTest', 'yTest', 'sTest', 'xTrain', 'yTrain', 'sTrain'))
 print("50%")
 
 #3. Uses descriptive activity names to name the activities in the data set
@@ -72,6 +76,9 @@ names(sMergedData) <- "Subject"
 
 #1.2 Merge the three datasets into a single dataset
 singleData <- cbind(xMergedData, yMergedData, sMergedData)
+
+#mem cleanup mergedData
+rm(list = c('xMergedData', 'yMergedData', 'sMergedData'))
 print("70%")
 
 #4.2 Appropriately label the rest of the data set with descriptive variable names.
