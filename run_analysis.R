@@ -27,6 +27,7 @@ print("20%")
 cleanup <- function() {
   cleanupData()
   cleanupZip()
+  detach("package:data.table", unload=TRUE)
 }
 cleanupData <- function() unlink(dataDir, recursive = TRUE)
 
