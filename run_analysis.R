@@ -73,8 +73,7 @@ rm(list = c('xTest', 'yTest', 'sTest', 'xTrain', 'yTrain', 'sTrain'))
 print("50%")
 
 #3. Uses descriptive activity names to name the activities in the data set
-yMergedData[, 1] <- read.table(
-  paste("./", dataDir, "/activity_labels.txt", sep = ""))[yMergedData[,1],2]
+yMergedData[, 1] <- loadFiles("/", "activity_labels.txt")[yMergedData[,1],2]
 names(yMergedData) <- "Activity"
 print("60%")
 #4.1 Label the subject dataset
