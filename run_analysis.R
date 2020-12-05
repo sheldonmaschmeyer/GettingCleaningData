@@ -7,7 +7,15 @@
 #4. Appropriately labels the data set with descriptive variable names.
 #5. From the data set in step 4, creates a second, independent tidy data set with the average of 
 #each variable for each activity and each subject.
-library(data.table)
+
+if (!require('data.table')) install.packages('data.table')
+
+# checks to see if data.table is already loaded, if it is not, loads it. If it is, set bool to 
+# prevent cleanup function from unloading it...might be used for purposes outside this script
+if(!("data.table" %in% (.packages()))) {
+  library('data.table')
+  detachTable <- TRUE
+} else detachTable <- FALSE
 
 print("Working....")
 #Download from datasource
@@ -27,7 +35,7 @@ print("20%")
 cleanup <- function() {
   cleanupData()
   cleanupZip()
-  detach("package:data.table", unload=TRUE)
+  if(detachTable == TRUE) detach("package:data.table", unload=TRUE)
 }
 cleanupData <- function() unlink(dataDir, recursive = TRUE)
 
@@ -110,5 +118,11 @@ write.table(tidyData, file = "tidyData.txt", row.names = FALSE, quote = FALSE)
 #Cleanup routine
 print("99% tidyData.txt file created cleaning up...")
 cleanup()
-rm(list = ls()) #clear the environment memory
+
+#This is better than rm(list = ls()) since this function removes everything from the 
+#global environment. Assuming this script is one component/module of a larger program/plan, 
+#it should clean itself up but not the entire global environment. Even if this script is run 
+#within it's own environment, ~sandbox, it is good practice.
+rm(list = c('singleData', 'tidyData', 'dataDir', 'featuresLocal', 'meanStd', 'testDir',
+             'trainDir', 'cleanup', 'cleanupData', 'cleanupZip', 'loadFiles', 'detachTable'))
 print("100% Program Done")
