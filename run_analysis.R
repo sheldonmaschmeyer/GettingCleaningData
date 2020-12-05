@@ -42,9 +42,9 @@ meanStd <- grep("-(mean|std)\\(\\)",
                 read.table(featuresLocal)[, 2])
 
 #Create a file loader function, makes code cleaner
-loadFiles <- function(fileDir, fileLocal) {
+loadFiles <- function(fileDir, theFile) {
   fileDir <- paste("./", dataDir, fileDir, sep = "")
-  read.table(paste(fileDir, fileLocal, sep=""), header = FALSE)
+  read.table(paste(fileDir, theFile, sep=""), header = FALSE)
 }
 
 testDir = "/test/"
