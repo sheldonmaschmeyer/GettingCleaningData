@@ -41,15 +41,21 @@ featuresLocal <- paste("./", dataDir, "/features.txt", sep = "")
 meanStd <- grep("-(mean|std)\\(\\)", 
                 read.table(featuresLocal)[, 2])
 
-testDir = paste("./", dataDir, "/test/", sep = "")
-xTest <- read.table(paste(testDir, "X_test.txt", sep=""), header = FALSE) [eval(meanStd)]
-yTest <- read.table(paste(testDir, "y_test.txt", sep = ""), header = FALSE)
-sTest <- read.table(paste(testDir, "subject_test.txt", sep = ""), header = FALSE)
+#Create a file loader function, makes code cleaner
+loadFiles <- function(fileDir, fileLocal) {
+  fileDir <- paste("./", dataDir, fileDir, sep = "")
+  read.table(paste(fileDir, fileLocal, sep=""), header = FALSE)
+}
+
+testDir = "/test/"
+xTest <- loadFiles(testDir, "X_test.txt") [eval(meanStd)]
+yTest <- loadFiles(testDir, "y_test.txt")
+sTest <- loadFiles(testDir, "subject_test.txt")
 print("25%")
-trainDir = paste("./", dataDir, "/train/", sep = "")
-xTrain <- read.table(paste(trainDir, "X_train.txt", sep = ""), header = FALSE) [eval(meanStd)]
-yTrain <- read.table(paste(trainDir, "y_train.txt", sep = ""), header = FALSE)
-sTrain <- read.table(paste(trainDir, "subject_train.txt", sep = ""), header = FALSE)
+trainDir = "/train/"
+xTrain <- loadFiles(trainDir, "X_train.txt") [eval(meanStd)]
+yTrain <- loadFiles(trainDir, "y_train.txt")
+sTrain <- loadFiles(trainDir, "subject_train.txt")
 print("30%")
 
 names(xTest) <- read.table(featuresLocal)[eval(meanStd), 2] 
