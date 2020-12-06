@@ -1,7 +1,7 @@
 # Coursera Getting and Cleaning Data Project
 Student: Sheldon Maschmeyer
 
-The run_analysis.R script is used to download data collected from a Samsung Galaxy S accelerometer and merge the data into a single dataset to be used for further analysis. 
+The run_analysis.R script is used to download data collected from a Samsung Galaxy S accelerometer and merge the data into a single dataset (tidyData.txt), to be used for further analysis. 
 
 This single dataset:
 * Merges the test and training data into a single table
