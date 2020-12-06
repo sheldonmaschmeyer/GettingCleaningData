@@ -7,5 +7,5 @@ This single dataset preserves:
 * descriptive activity and variable names 
 * retains only the mean and standard deviation for each variable
 
-The CODEBOOK contains a description of the new tidydata.txt data set file. 
+The CodeBook.md contains a description of the new tidydata.txt data set file. 
 instructions.pdf contains the original assignment instructions
