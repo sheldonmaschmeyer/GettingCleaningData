@@ -2,9 +2,11 @@
 Student: Sheldon Maschmeyer
 
 The run_analysis.R script is used to download data collected from a Samsung Galaxy S accelerometer and merge the data into a single dataset to be used for further analysis. 
-This single dataset preserves: 
-* the unique identifier representing the subjects studied 
-* descriptive activity and variable names 
+
+This single dataset:
+* Merges the test and training data into a single table
+* preserves the unique identifier representing the subjects studied 
+* has descriptive activity and variable names 
 * retains only the mean and standard deviation for each variable
 
 The CodeBook.md contains a description of the new tidydata.txt data set file. 
