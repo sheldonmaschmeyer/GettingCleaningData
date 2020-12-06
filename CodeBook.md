@@ -6,7 +6,7 @@ The script merges the training and the test sets to create one data set called t
 tidydata.txt contains only the mean and standard deviation measurements with the average of each variable for each activity and each subject. 
 Uses descriptive activity names to name the activities in the data set and appropriately labels the data set with descriptive variable names described below.
 
-# Each variable was renamed in tidydata.txt as per the below
+# Each variable from training and test data was renamed for tidydata.txt as per the below
 
 | Original | Descriptive rename |  
 | ------------- | ------------- |
