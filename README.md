@@ -5,9 +5,9 @@ The run_analysis.R script is used to download data collected from a Samsung Gala
 
 This single dataset:
 * Merges the test and training data into a single table
-* preserves the unique identifier representing the subjects studied 
-* has descriptive activity and variable names 
-* retains only the mean and standard deviation for each variable
+* Preserves the unique identifier representing the subjects studied 
+* Has descriptive activity and variable names 
+* Retains only the mean and standard deviation for each variable
 
 The CodeBook.md contains a description of the new tidydata.txt data set file. 
 instructions.pdf contains the original assignment instructions
