@@ -10,7 +10,7 @@ Uses descriptive activity names to name the activities in the data set and appro
 
 | Original | Descriptive rename |  
 | ------------- | ------------- |
-| |  Subject|                                                                     
+| |  Subject |                                                                     
 | |  Activity|   
 | tBodyAccMeanX | TimeDomain.BodyAcceleration.Mean...X|
 | tBodyAccMeanY | TimeDomain.BodyAcceleration.Mean...Y|
@@ -77,3 +77,8 @@ Uses descriptive activity names to name the activities in the data set and appro
 | fBodyBodyGyroMagStd  | FrequencyDomain.BodyBodyAngularVelocityMagnitude.StandardDeviation.. | 
 | fBodyBodyGyroJerkMagMean | FrequencyDomain.BodyBodyAngularVelocitySuddenMagnitude.Mean.. | 
 | fBodyBodyGyroJerkMagStd | FrequencyDomain.BodyBodyAngularVelocitySuddenMagnitude.StandardDeviation.. |
+
+# Subject column
+A value from 1 to 30 which is "an identifier of the subject who carried out the experiment"
+# Activity column
+The activity being measured: LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS
